@@ -1,10 +1,10 @@
-const url = "http://localhost:8080";
+const url = "http://localhost";
 
 export const fetchLogs = async (dispatch, state) => {
   dispatch({ type: "LOADING_DATA" });
 
   try {
-    const res = await fetch(`${url}/logs?start=0&end=2`);
+    const res = await fetch(`${url}/logs?start=0&end=2`, { cors: "no-cors" });
     const payload = await res.json();
     console.log(payload);
 
